@@ -6,7 +6,7 @@ This repo contains a kustomized deployment for self-managed ArgoCD.  The deploym
    * Deploy via good ol' `kubectl`:
 
 ```bash
-kubectl apply -f deploy
+kubectl apply -k deploy
 ```
 
    * Login to ArgoCD UI
