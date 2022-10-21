@@ -1,3 +1,8 @@
+# This patch overrides the startup command in the argocd-server Deployment
+# to run ArgoCD in "insecure" mode meaning that it won't try to redirect all
+# port 80 traffic to port 443.  This is necessary because SSL termination
+# happens at the load balancer (HAProxy running in pfSense).
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:

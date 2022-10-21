@@ -1,3 +1,6 @@
+# I don't think this is entirely necessary since I'm pretty sure Services default 
+# to ClusterIP if not explicitly specified but, hey, better safe than sorry.
+
 apiVersion: v1
 kind: Service
 metadata:
