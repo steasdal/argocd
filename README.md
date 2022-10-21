@@ -1,3 +1,15 @@
-# ArgoCD Deployment
+# ArgoCD Deployment - Self Managed
 
-Just a quick 'n dirty deployment file for ArgoCD running in the home Kubernetes cluster.  This is basically a copy of the official ArgoCD deployment file with an ingress thrown in.
+This repo contains a kustomized deployment for self-managed ArgoCD.  The deployment requires a bit of bootstrap trickery like so:
+
+   * Clone this repo locally
+   * Deploy via good ol' `kubectl`:
+
+```bash
+kubectl apply -f deploy
+```
+
+   * Login to ArgoCD UI
+   * Create an ArgoCD app called "ArgoCD" but use this repo's GitHub URL and the `deploy` directory.
+
+The ArgoCD app should _override_ the existing config that was deployed via kubectl.
