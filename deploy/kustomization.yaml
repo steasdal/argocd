@@ -8,5 +8,7 @@ resources:
 patchesStrategicMerge:
 - overlays/argocd-server-service.yaml
 - overlays/argocd-server-deployment.yaml
+- overlays/argocd-server-argocd-cm.yaml
 
 namespace: argocd
+ 

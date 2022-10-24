@@ -1,0 +1,9 @@
+# This patch bootstraps an account for my self into the argocd-cm configMap
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+  namespace: argocd
+data:
+  accounts.sam: apiKey, login
