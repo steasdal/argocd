@@ -17,3 +17,25 @@ spec:
             name: argocd-server
             port:
               number: 80
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-ingress-tunneled 
+spec:
+  # The following IngressClassName comes from the IngressClass 
+  # defined in the nginx-ingress-controller project.
+  ingressClassName: nginx
+  rules:
+  - host: argocd.teasdale.click
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 80
